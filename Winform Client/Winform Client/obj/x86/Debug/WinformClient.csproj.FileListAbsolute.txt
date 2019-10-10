@@ -1,0 +1,11 @@
+C:\ClientServerWinformsApplication\ClientServerAuthSystem\Winform Client\Winform Client\bin\Debug\Winform Client.exe
+C:\ClientServerWinformsApplication\ClientServerAuthSystem\Winform Client\Winform Client\bin\Debug\Winform Client.pdb
+C:\ClientServerWinformsApplication\ClientServerAuthSystem\Winform Client\Winform Client\obj\x86\Debug\WinformClient.csprojAssemblyReference.cache
+C:\ClientServerWinformsApplication\ClientServerAuthSystem\Winform Client\Winform Client\obj\x86\Debug\Winform_Client.Form1.resources
+C:\ClientServerWinformsApplication\ClientServerAuthSystem\Winform Client\Winform Client\obj\x86\Debug\Winform_Client.RegisterNewUser.resources
+C:\ClientServerWinformsApplication\ClientServerAuthSystem\Winform Client\Winform Client\obj\x86\Debug\Winform_Client.LoginForm.resources
+C:\ClientServerWinformsApplication\ClientServerAuthSystem\Winform Client\Winform Client\obj\x86\Debug\Winform_Client.Properties.Resources.resources
+C:\ClientServerWinformsApplication\ClientServerAuthSystem\Winform Client\Winform Client\obj\x86\Debug\WinformClient.csproj.GenerateResource.cache
+C:\ClientServerWinformsApplication\ClientServerAuthSystem\Winform Client\Winform Client\obj\x86\Debug\WinformClient.csproj.CoreCompileInputs.cache
+C:\ClientServerWinformsApplication\ClientServerAuthSystem\Winform Client\Winform Client\obj\x86\Debug\Winform Client.exe
+C:\ClientServerWinformsApplication\ClientServerAuthSystem\Winform Client\Winform Client\obj\x86\Debug\Winform Client.pdb

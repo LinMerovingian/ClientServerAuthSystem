@@ -1,0 +1,44 @@
+C:\Users\Rich\Desktop\MUD\MudFinal\03.Chat system\Winform Client\Winform Client\bin\Debug\Winform Client.exe
+C:\Users\Rich\Desktop\MUD\MudFinal\03.Chat system\Winform Client\Winform Client\bin\Debug\Winform Client.pdb
+C:\Users\Rich\Desktop\MUD\MudFinal\03.Chat system\Winform Client\Winform Client\bin\Debug\MessageTypes.dll
+C:\Users\Rich\Desktop\MUD\MudFinal\03.Chat system\Winform Client\Winform Client\bin\Debug\MessageTypes.pdb
+C:\Users\Rich\Desktop\MUD\MudFinal\03.Chat system\Winform Client\Winform Client\obj\x86\Debug\Winform Client.csprojResolveAssemblyReference.cache
+C:\Users\Rich\Desktop\MUD\MudFinal\03.Chat system\Winform Client\Winform Client\obj\x86\Debug\Winform_Client.Form1.resources
+C:\Users\Rich\Desktop\MUD\MudFinal\03.Chat system\Winform Client\Winform Client\obj\x86\Debug\Winform_Client.Properties.Resources.resources
+C:\Users\Rich\Desktop\MUD\MudFinal\03.Chat system\Winform Client\Winform Client\obj\x86\Debug\Winform Client.csproj.GenerateResource.Cache
+C:\Users\Rich\Desktop\MUD\MudFinal\03.Chat system\Winform Client\Winform Client\obj\x86\Debug\Winform Client.csproj.CoreCompileInputs.cache
+C:\Users\Rich\Desktop\MUD\MudFinal\03.Chat system\Winform Client\Winform Client\obj\x86\Debug\Winform Client.exe
+C:\Users\Rich\Desktop\MUD\MudFinal\03.Chat system\Winform Client\Winform Client\obj\x86\Debug\Winform Client.pdb
+C:\Users\Rich\Desktop\comp260-server-1617\Winform Client\Winform Client\obj\x86\Debug\Winform Client.csprojResolveAssemblyReference.cache
+C:\Users\Rich\Desktop\comp260-server-1617\Winform Client\Winform Client\obj\x86\Debug\Winform_Client.Form1.resources
+C:\Users\Rich\Desktop\comp260-server-1617\Winform Client\Winform Client\obj\x86\Debug\Winform_Client.Properties.Resources.resources
+C:\Users\Rich\Desktop\comp260-server-1617\Winform Client\Winform Client\obj\x86\Debug\Winform Client.csproj.GenerateResource.Cache
+C:\Users\Rich\Desktop\comp260-server-1617\Winform Client\Winform Client\obj\x86\Debug\Winform Client.csproj.CoreCompileInputs.cache
+C:\Users\Rich\Desktop\comp260-server-1617\Winform Client\Winform Client\obj\x86\Debug\Winform Client.exe
+C:\Users\Rich\Desktop\comp260-server-1617\Winform Client\Winform Client\obj\x86\Debug\Winform Client.pdb
+C:\Users\Rich\Desktop\comp260-server-1617\Winform Client\Winform Client\bin\Debug\Winform Client.exe
+C:\Users\Rich\Desktop\comp260-server-1617\Winform Client\Winform Client\bin\Debug\Winform Client.pdb
+C:\Users\Rich\Desktop\comp260-server-1617\Winform Client\Winform Client\obj\x86\Debug\Winform_Client.RegisterNewUser.resources
+C:\Users\Rich\Desktop\comp260-server-1617\Winform Client\Winform Client\obj\x86\Debug\Winform_Client.LoginForm.resources
+C:\Users\Richard\Downloads\comp260-server-1617-master\comp260-server-1617-master\Winform Client\Winform Client\obj\x86\Debug\Winform Client.csprojAssemblyReference.cache
+C:\Users\Richard\Downloads\comp260-server-1617-master\comp260-server-1617-master\Winform Client\Winform Client\obj\x86\Debug\Winform Client.exe
+C:\Users\Richard\Downloads\comp260-server-1617-master\comp260-server-1617-master\Winform Client\Winform Client\obj\x86\Debug\Winform Client.pdb
+C:\Users\Richard\Downloads\comp260-server-1617-master\comp260-server-1617-master\Winform Client\Winform Client\bin\Debug\Winform Client.exe
+C:\Users\Richard\Downloads\comp260-server-1617-master\comp260-server-1617-master\Winform Client\Winform Client\bin\Debug\Winform Client.pdb
+C:\Users\Richard\Downloads\comp260-server-1617-master\comp260-server-1617-master\Winform Client\Winform Client\obj\x86\Debug\Winform_Client.Form1.resources
+C:\Users\Richard\Downloads\comp260-server-1617-master\comp260-server-1617-master\Winform Client\Winform Client\obj\x86\Debug\Winform_Client.RegisterNewUser.resources
+C:\Users\Richard\Downloads\comp260-server-1617-master\comp260-server-1617-master\Winform Client\Winform Client\obj\x86\Debug\Winform_Client.LoginForm.resources
+C:\Users\Richard\Downloads\comp260-server-1617-master\comp260-server-1617-master\Winform Client\Winform Client\obj\x86\Debug\Winform_Client.Properties.Resources.resources
+C:\Users\Richard\Downloads\comp260-server-1617-master\comp260-server-1617-master\Winform Client\Winform Client\obj\x86\Debug\Winform Client.csproj.GenerateResource.cache
+C:\Users\Richard\Downloads\comp260-server-1617-master\comp260-server-1617-master\Winform Client\Winform Client\obj\x86\Debug\Winform Client.csproj.CoreCompileInputs.cache
+C:\ClientServerWinformsApplication\comp260-server-1617-master\Winform Client\Winform Client\bin\Debug\Winform Client.exe
+C:\ClientServerWinformsApplication\comp260-server-1617-master\Winform Client\Winform Client\bin\Debug\Winform Client.pdb
+C:\ClientServerWinformsApplication\comp260-server-1617-master\Winform Client\Winform Client\obj\x86\Debug\Winform Client.csprojAssemblyReference.cache
+C:\ClientServerWinformsApplication\comp260-server-1617-master\Winform Client\Winform Client\obj\x86\Debug\Winform_Client.Form1.resources
+C:\ClientServerWinformsApplication\comp260-server-1617-master\Winform Client\Winform Client\obj\x86\Debug\Winform_Client.RegisterNewUser.resources
+C:\ClientServerWinformsApplication\comp260-server-1617-master\Winform Client\Winform Client\obj\x86\Debug\Winform_Client.LoginForm.resources
+C:\ClientServerWinformsApplication\comp260-server-1617-master\Winform Client\Winform Client\obj\x86\Debug\Winform_Client.Properties.Resources.resources
+C:\ClientServerWinformsApplication\comp260-server-1617-master\Winform Client\Winform Client\obj\x86\Debug\Winform Client.csproj.GenerateResource.cache
+C:\ClientServerWinformsApplication\comp260-server-1617-master\Winform Client\Winform Client\obj\x86\Debug\Winform Client.csproj.CoreCompileInputs.cache
+C:\ClientServerWinformsApplication\comp260-server-1617-master\Winform Client\Winform Client\obj\x86\Debug\Winform Client.exe
+C:\ClientServerWinformsApplication\comp260-server-1617-master\Winform Client\Winform Client\obj\x86\Debug\Winform Client.pdb

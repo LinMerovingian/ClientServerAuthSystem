@@ -1,0 +1,86 @@
+C:\Users\Rich\Desktop\MUD\MudFinal\03.Chat system\Server\code\bin\Debug\Server.exe
+C:\Users\Rich\Desktop\MUD\MudFinal\03.Chat system\Server\code\bin\Debug\Server.pdb
+C:\Users\Rich\Desktop\MUD\MudFinal\03.Chat system\Server\code\bin\Debug\Dungeon.dll
+C:\Users\Rich\Desktop\MUD\MudFinal\03.Chat system\Server\code\bin\Debug\MessageTypes.dll
+C:\Users\Rich\Desktop\MUD\MudFinal\03.Chat system\Server\code\bin\Debug\MessageTypes.pdb
+C:\Users\Rich\Desktop\MUD\MudFinal\03.Chat system\Server\code\bin\Debug\Dungeon.pdb
+C:\Users\Rich\Desktop\MUD\MudFinal\03.Chat system\Server\code\obj\x86\Debug\Server.csprojResolveAssemblyReference.cache
+C:\Users\Rich\Desktop\MUD\MudFinal\03.Chat system\Server\code\obj\x86\Debug\Server.csproj.CoreCompileInputs.cache
+C:\Users\Rich\Desktop\MUD\MudFinal\03.Chat system\Server\code\obj\x86\Debug\Server.exe
+C:\Users\Rich\Desktop\MUD\MudFinal\03.Chat system\Server\code\obj\x86\Debug\Server.pdb
+C:\Users\Rich\Desktop\comp260-server-1617\Server\code\obj\x86\Debug\Server.csprojResolveAssemblyReference.cache
+C:\Users\Rich\Desktop\comp260-server-1617\Server\code\obj\x86\Debug\Server.csproj.CoreCompileInputs.cache
+C:\Users\Rich\Desktop\comp260-server-1617\Server\code\bin\Debug\Server.exe.config
+C:\Users\Rich\Desktop\comp260-server-1617\Server\code\bin\Debug\Server.exe
+C:\Users\Rich\Desktop\comp260-server-1617\Server\code\bin\Debug\Server.pdb
+C:\Users\Rich\Desktop\comp260-server-1617\Server\code\bin\Debug\EntityFramework.dll
+C:\Users\Rich\Desktop\comp260-server-1617\Server\code\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Rich\Desktop\comp260-server-1617\Server\code\bin\Debug\MessageTypes.dll
+C:\Users\Rich\Desktop\comp260-server-1617\Server\code\bin\Debug\System.Data.SQLite.dll
+C:\Users\Rich\Desktop\comp260-server-1617\Server\code\bin\Debug\System.Data.SQLite.EF6.dll
+C:\Users\Rich\Desktop\comp260-server-1617\Server\code\bin\Debug\System.Data.SQLite.Linq.dll
+C:\Users\Rich\Desktop\comp260-server-1617\Server\code\bin\Debug\MessageTypes.pdb
+C:\Users\Rich\Desktop\comp260-server-1617\Server\code\bin\Debug\EntityFramework.xml
+C:\Users\Rich\Desktop\comp260-server-1617\Server\code\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Rich\Desktop\comp260-server-1617\Server\code\bin\Debug\System.Data.SQLite.xml
+C:\Users\Rich\Desktop\comp260-server-1617\Server\code\bin\Debug\System.Data.SQLite.dll.config
+C:\Users\Rich\Desktop\comp260-server-1617\Server\code\obj\x86\Debug\Server.csproj.CopyComplete
+C:\Users\Rich\Desktop\comp260-server-1617\Server\code\obj\x86\Debug\Server.exe
+C:\Users\Rich\Desktop\comp260-server-1617\Server\code\obj\x86\Debug\Server.pdb
+C:\Users\Rich\Desktop\Uni\comp260\comp260-server-1617\Server\code\bin\Debug\Server.exe.config
+C:\Users\Rich\Desktop\Uni\comp260\comp260-server-1617\Server\code\bin\Debug\Server.exe
+C:\Users\Rich\Desktop\Uni\comp260\comp260-server-1617\Server\code\bin\Debug\Server.pdb
+C:\Users\Rich\Desktop\Uni\comp260\comp260-server-1617\Server\code\bin\Debug\EntityFramework.dll
+C:\Users\Rich\Desktop\Uni\comp260\comp260-server-1617\Server\code\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Rich\Desktop\Uni\comp260\comp260-server-1617\Server\code\bin\Debug\MessageTypes.dll
+C:\Users\Rich\Desktop\Uni\comp260\comp260-server-1617\Server\code\bin\Debug\System.Data.SQLite.dll
+C:\Users\Rich\Desktop\Uni\comp260\comp260-server-1617\Server\code\bin\Debug\System.Data.SQLite.EF6.dll
+C:\Users\Rich\Desktop\Uni\comp260\comp260-server-1617\Server\code\bin\Debug\System.Data.SQLite.Linq.dll
+C:\Users\Rich\Desktop\Uni\comp260\comp260-server-1617\Server\code\bin\Debug\MessageTypes.pdb
+C:\Users\Rich\Desktop\Uni\comp260\comp260-server-1617\Server\code\bin\Debug\EntityFramework.xml
+C:\Users\Rich\Desktop\Uni\comp260\comp260-server-1617\Server\code\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Rich\Desktop\Uni\comp260\comp260-server-1617\Server\code\bin\Debug\System.Data.SQLite.xml
+C:\Users\Rich\Desktop\Uni\comp260\comp260-server-1617\Server\code\bin\Debug\System.Data.SQLite.dll.config
+C:\Users\Rich\Desktop\Uni\comp260\comp260-server-1617\Server\code\obj\x86\Debug\Server.csprojResolveAssemblyReference.cache
+C:\Users\Rich\Desktop\Uni\comp260\comp260-server-1617\Server\code\obj\x86\Debug\Server.csproj.CoreCompileInputs.cache
+C:\Users\Rich\Desktop\Uni\comp260\comp260-server-1617\Server\code\obj\x86\Debug\Server.csproj.CopyComplete
+C:\Users\Rich\Desktop\Uni\comp260\comp260-server-1617\Server\code\obj\x86\Debug\Server.exe
+C:\Users\Rich\Desktop\Uni\comp260\comp260-server-1617\Server\code\obj\x86\Debug\Server.pdb
+C:\Users\Richard\Downloads\comp260-server-1617-master\comp260-server-1617-master\Server\code\bin\Debug\Server.exe.config
+C:\Users\Richard\Downloads\comp260-server-1617-master\comp260-server-1617-master\Server\code\bin\Debug\Server.exe
+C:\Users\Richard\Downloads\comp260-server-1617-master\comp260-server-1617-master\Server\code\bin\Debug\Server.pdb
+C:\Users\Richard\Downloads\comp260-server-1617-master\comp260-server-1617-master\Server\code\bin\Debug\EntityFramework.dll
+C:\Users\Richard\Downloads\comp260-server-1617-master\comp260-server-1617-master\Server\code\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Richard\Downloads\comp260-server-1617-master\comp260-server-1617-master\Server\code\bin\Debug\MessageTypes.dll
+C:\Users\Richard\Downloads\comp260-server-1617-master\comp260-server-1617-master\Server\code\bin\Debug\System.Data.SQLite.dll
+C:\Users\Richard\Downloads\comp260-server-1617-master\comp260-server-1617-master\Server\code\bin\Debug\System.Data.SQLite.EF6.dll
+C:\Users\Richard\Downloads\comp260-server-1617-master\comp260-server-1617-master\Server\code\bin\Debug\System.Data.SQLite.Linq.dll
+C:\Users\Richard\Downloads\comp260-server-1617-master\comp260-server-1617-master\Server\code\bin\Debug\MessageTypes.pdb
+C:\Users\Richard\Downloads\comp260-server-1617-master\comp260-server-1617-master\Server\code\bin\Debug\EntityFramework.xml
+C:\Users\Richard\Downloads\comp260-server-1617-master\comp260-server-1617-master\Server\code\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Richard\Downloads\comp260-server-1617-master\comp260-server-1617-master\Server\code\bin\Debug\System.Data.SQLite.xml
+C:\Users\Richard\Downloads\comp260-server-1617-master\comp260-server-1617-master\Server\code\bin\Debug\System.Data.SQLite.dll.config
+C:\Users\Richard\Downloads\comp260-server-1617-master\comp260-server-1617-master\Server\code\obj\x86\Debug\Server.csprojAssemblyReference.cache
+C:\Users\Richard\Downloads\comp260-server-1617-master\comp260-server-1617-master\Server\code\obj\x86\Debug\Server.csproj.CoreCompileInputs.cache
+C:\Users\Richard\Downloads\comp260-server-1617-master\comp260-server-1617-master\Server\code\obj\x86\Debug\Server.csproj.CopyComplete
+C:\Users\Richard\Downloads\comp260-server-1617-master\comp260-server-1617-master\Server\code\obj\x86\Debug\Server.exe
+C:\Users\Richard\Downloads\comp260-server-1617-master\comp260-server-1617-master\Server\code\obj\x86\Debug\Server.pdb
+C:\ClientServerWinformsApplication\comp260-server-1617-master\Server\code\bin\Debug\Server.exe.config
+C:\ClientServerWinformsApplication\comp260-server-1617-master\Server\code\bin\Debug\Server.exe
+C:\ClientServerWinformsApplication\comp260-server-1617-master\Server\code\bin\Debug\Server.pdb
+C:\ClientServerWinformsApplication\comp260-server-1617-master\Server\code\bin\Debug\EntityFramework.dll
+C:\ClientServerWinformsApplication\comp260-server-1617-master\Server\code\bin\Debug\EntityFramework.SqlServer.dll
+C:\ClientServerWinformsApplication\comp260-server-1617-master\Server\code\bin\Debug\MessageTypes.dll
+C:\ClientServerWinformsApplication\comp260-server-1617-master\Server\code\bin\Debug\System.Data.SQLite.dll
+C:\ClientServerWinformsApplication\comp260-server-1617-master\Server\code\bin\Debug\System.Data.SQLite.EF6.dll
+C:\ClientServerWinformsApplication\comp260-server-1617-master\Server\code\bin\Debug\System.Data.SQLite.Linq.dll
+C:\ClientServerWinformsApplication\comp260-server-1617-master\Server\code\bin\Debug\MessageTypes.pdb
+C:\ClientServerWinformsApplication\comp260-server-1617-master\Server\code\bin\Debug\EntityFramework.xml
+C:\ClientServerWinformsApplication\comp260-server-1617-master\Server\code\bin\Debug\EntityFramework.SqlServer.xml
+C:\ClientServerWinformsApplication\comp260-server-1617-master\Server\code\bin\Debug\System.Data.SQLite.xml
+C:\ClientServerWinformsApplication\comp260-server-1617-master\Server\code\bin\Debug\System.Data.SQLite.dll.config
+C:\ClientServerWinformsApplication\comp260-server-1617-master\Server\code\obj\x86\Debug\Server.csprojAssemblyReference.cache
+C:\ClientServerWinformsApplication\comp260-server-1617-master\Server\code\obj\x86\Debug\Server.csproj.CoreCompileInputs.cache
+C:\ClientServerWinformsApplication\comp260-server-1617-master\Server\code\obj\x86\Debug\Server.csproj.CopyComplete
+C:\ClientServerWinformsApplication\comp260-server-1617-master\Server\code\obj\x86\Debug\Server.exe
+C:\ClientServerWinformsApplication\comp260-server-1617-master\Server\code\obj\x86\Debug\Server.pdb
