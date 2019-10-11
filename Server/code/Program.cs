@@ -320,11 +320,13 @@ namespace Server
             m_IDTable = m_Database.addIDTable("ID",
                 "name varchar(24) NOT NULL, " +
                 "nextID int");
-            
-            m_IDTable.AddIDEntry("next", 0 );
+
+            m_LoginsTable.AddEntry(new string[] { "admin", "J1NF8m6ZRuDcx/5038/xP/zVdHPwg2YEdpOZvEVRFCw=", "IxBicNFzHtBa5GBFOuZTatjPTmVvgQ0JQ5NHwp+BOTI=", "false", "0" } );
+            m_UserTable.AddEntry(new string[] { "admin", "0", "999" });
+
+            m_IDTable.AddIDEntry("next", 1);
 
             controls = new Controls(m_UserTable, m_LoginsTable);
-            
             
             Socket serverSocket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
 
