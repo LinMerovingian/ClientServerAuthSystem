@@ -113,7 +113,7 @@ namespace Server
 
                         if (message != null)
                         {
-                            Console.Write("Client action: " + clientSocket);
+                            Console.Write("Client action: " + clientSocket + "\r\n");
                             switch (message.mID)
                             {
                                 case ActionMsg.ID:
@@ -225,7 +225,7 @@ namespace Server
                                     // Else if client is requesting salt
                                     else if (processedLoginMessage[1] == "RequestSalt")
                                     {
-                                        if (m_LoginsTable.getStringFieldFromName(submittedUserName, "isLoggedIn") == "false")
+                                        if (true)//m_LoginsTable.getStringFieldFromName(submittedUserName, "isLoggedIn") == "false")
                                         {
                                             String salt = m_LoginsTable.getStringFieldFromName(submittedUserName, "passwordSalt");
                                             SendLoginMessage(clientSocket, salt);
@@ -258,6 +258,9 @@ namespace Server
                                         }
                                     }
                                     break;
+
+                                case LogoutMsg.ID:
+                                    throw new Exception();
                             }
                         }
                     }
@@ -303,28 +306,40 @@ namespace Server
 
         static void Main(string[] args)
         {
-            m_Database = new SQLDatabase("database");
-            
-            m_LoginsTable = m_Database.addLoginTable("logins",
-                "name varchar(20) NOT NULL, " +
-                "passwordHash varchar(512) NOT NULL, " +
-                "passwordSalt varchar(512) NOT NULL, " +
-                "isLoggedIn varchar(8), " +
-                "id int NOT NULL");
-            
-            m_UserTable = m_Database.addUsersTable("users",
-                "name varchar(24) NOT NULL, " +
-                "id int NOT NULL, " +
-                "securityLevel int NOT NULL");
-                
-            m_IDTable = m_Database.addIDTable("ID",
-                "name varchar(24) NOT NULL, " +
-                "nextID int");
+            if (File.Exists("database.db"))
+            {
+                m_Database = new SQLDatabase("database.db", true);
 
-            m_LoginsTable.AddEntry(new string[] { "admin", "J1NF8m6ZRuDcx/5038/xP/zVdHPwg2YEdpOZvEVRFCw=", "IxBicNFzHtBa5GBFOuZTatjPTmVvgQ0JQ5NHwp+BOTI=", "false", "0" } );
-            m_UserTable.AddEntry(new string[] { "admin", "0", "999" });
+                m_LoginsTable = m_Database.getLoginTable("logins");
+                m_UserTable = m_Database.getUsersTable("users");
+                m_IDTable = m_Database.getIdTable("ID");
 
-            m_IDTable.AddIDEntry("next", 1);
+            }
+            else
+            {
+                m_Database = new SQLDatabase("database.db");
+
+                m_LoginsTable = m_Database.addLoginTable("logins",
+                    "name varchar(20) NOT NULL, " +
+                    "passwordHash varchar(512) NOT NULL, " +
+                    "passwordSalt varchar(512) NOT NULL, " +
+                    "isLoggedIn varchar(8), " +
+                    "id int NOT NULL");
+
+                m_UserTable = m_Database.addUsersTable("users",
+                    "name varchar(24) NOT NULL, " +
+                    "id int NOT NULL, " +
+                    "securityLevel int NOT NULL");
+
+                m_IDTable = m_Database.addIDTable("ID",
+                    "name varchar(24) NOT NULL, " +
+                    "nextID int");
+
+                m_LoginsTable.AddEntry(new string[] { "admin", "J1NF8m6ZRuDcx/5038/xP/zVdHPwg2YEdpOZvEVRFCw=", "IxBicNFzHtBa5GBFOuZTatjPTmVvgQ0JQ5NHwp+BOTI=", "false", "0" });
+                m_UserTable.AddEntry(new string[] { "admin", "0", "999" });
+
+                m_IDTable.AddIDEntry("next", 1);
+            }
 
             controls = new Controls(m_UserTable, m_LoginsTable);
             
@@ -356,7 +371,7 @@ namespace Server
         
         static public int GetNextUniqueID()
         {
-            // get the current unused value from the ID table, field nextID
+            // Get the current unused value from the ID table, field nextID
             int i = m_IDTable.getIntFieldFromName("next", "nextID");
             
             m_IDTable.setFieldFromName("next", i+1, "nextID");

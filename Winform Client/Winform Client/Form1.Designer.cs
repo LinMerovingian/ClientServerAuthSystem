@@ -31,7 +31,7 @@
             this.buttonSend = new System.Windows.Forms.Button();
             this.textBox_Input = new System.Windows.Forms.TextBox();
             this.textBox_Output = new System.Windows.Forms.TextBox();
-            this.textBox_ClientName = new System.Windows.Forms.TextBox();
+            this.LogOut_Button = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // buttonSend
@@ -60,13 +60,15 @@
             this.textBox_Output.Size = new System.Drawing.Size(470, 235);
             this.textBox_Output.TabIndex = 3;
             // 
-            // textBox_ClientName
+            // LogOut_Button
             // 
-            this.textBox_ClientName.Location = new System.Drawing.Point(32, 12);
-            this.textBox_ClientName.Name = "textBox_ClientName";
-            this.textBox_ClientName.ReadOnly = true;
-            this.textBox_ClientName.Size = new System.Drawing.Size(100, 20);
-            this.textBox_ClientName.TabIndex = 4;
+            this.LogOut_Button.Location = new System.Drawing.Point(427, 13);
+            this.LogOut_Button.Name = "LogOut_Button";
+            this.LogOut_Button.Size = new System.Drawing.Size(75, 23);
+            this.LogOut_Button.TabIndex = 4;
+            this.LogOut_Button.Text = "Log out";
+            this.LogOut_Button.UseVisualStyleBackColor = true;
+            this.LogOut_Button.Click += new System.EventHandler(this.LogOut_Button_Click);
             // 
             // Form1
             // 
@@ -74,7 +76,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(543, 363);
-            this.Controls.Add(this.textBox_ClientName);
+            this.Controls.Add(this.LogOut_Button);
             this.Controls.Add(this.textBox_Output);
             this.Controls.Add(this.textBox_Input);
             this.Controls.Add(this.buttonSend);
@@ -94,7 +96,7 @@
         private System.Windows.Forms.Button buttonSend;
         private System.Windows.Forms.TextBox textBox_Input;
         private System.Windows.Forms.TextBox textBox_Output;
-        private System.Windows.Forms.TextBox textBox_ClientName;
+        private System.Windows.Forms.Button LogOut_Button;
     }
 }
 

@@ -24,16 +24,19 @@ namespace Server
         public String m_TableName;
         String m_TableColumns;
         
-        public SQLTable(sqliteConnection connection, String tableName, String tableColumns)
+        public SQLTable(sqliteConnection connection, String tableName, String tableColumns, bool createNew)
         {
             m_Connection = connection;
             m_TableName = tableName;
             m_TableColumns = tableColumns;
 
-            sqliteCommand command = new sqliteCommand("create table " + m_TableName + " (" + m_TableColumns + ")", m_Connection);
+            if (createNew)
+            {
+                sqliteCommand command = new sqliteCommand("create table " + m_TableName + " (" + m_TableColumns + ")", m_Connection);
 
-            command.Parameters.Add("@name", System.Data.DbType.String).Value = m_TableName;
-            command.ExecuteNonQuery();
+                command.Parameters.Add("@name", System.Data.DbType.String).Value = m_TableName;
+                command.ExecuteNonQuery();
+            }
         }
         
         public String getName()
@@ -250,7 +253,7 @@ namespace Server
     }
     public class LoginTable : SQLTable
     {
-        public LoginTable(sqliteConnection connection, String tableName, String tableColumns) : base(connection, tableName, tableColumns) { }
+        public LoginTable(sqliteConnection connection, String tableName, String tableColumns, bool createNew) : base(connection, tableName, tableColumns, createNew) { }
         
         public override void AddEntry(string[] dataArray)
         {
@@ -274,7 +277,7 @@ namespace Server
     }
     public class UsersTable : SQLTable
     {
-        public UsersTable(sqliteConnection connection, String tableName, String tableColumns) : base(connection, tableName, tableColumns) { }
+        public UsersTable(sqliteConnection connection, String tableName, String tableColumns, bool createNew) : base(connection, tableName, tableColumns, createNew) { }
         
         public override void AddEntry(string[] dataArray)
         {
@@ -297,7 +300,7 @@ namespace Server
     
     public class IdTable : SQLTable
     {
-        public IdTable(sqliteConnection connection, String tableName, String tableColumns) : base(connection, tableName, tableColumns) { }
+        public IdTable(sqliteConnection connection, String tableName, String tableColumns, bool createNew) : base(connection, tableName, tableColumns, createNew) { }
         
         public void AddIDEntry(string name, int id)
         {

@@ -22,3 +22,9 @@ C:\ClientServerWinformsApplication\comp260-server-1617-master\MessageTypes\obj\D
 C:\ClientServerWinformsApplication\comp260-server-1617-master\MessageTypes\obj\Debug\MessageTypes.csproj.CoreCompileInputs.cache
 C:\ClientServerWinformsApplication\comp260-server-1617-master\MessageTypes\obj\Debug\MessageTypes.dll
 C:\ClientServerWinformsApplication\comp260-server-1617-master\MessageTypes\obj\Debug\MessageTypes.pdb
+C:\ClientServerWinformsApplication\ClientServerAuthSystem\MessageTypes\bin\Debug\MessageTypes.dll
+C:\ClientServerWinformsApplication\ClientServerAuthSystem\MessageTypes\bin\Debug\MessageTypes.pdb
+C:\ClientServerWinformsApplication\ClientServerAuthSystem\MessageTypes\obj\Debug\MessageTypes.csprojAssemblyReference.cache
+C:\ClientServerWinformsApplication\ClientServerAuthSystem\MessageTypes\obj\Debug\MessageTypes.csproj.CoreCompileInputs.cache
+C:\ClientServerWinformsApplication\ClientServerAuthSystem\MessageTypes\obj\Debug\MessageTypes.dll
+C:\ClientServerWinformsApplication\ClientServerAuthSystem\MessageTypes\obj\Debug\MessageTypes.pdb

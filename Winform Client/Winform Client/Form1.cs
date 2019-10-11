@@ -165,6 +165,13 @@ namespace Winform_Client
                                                 }));
                                                 break;
 
+                                            case "AuthenticateRequested":
+                                                m_MainForm.Invoke(new MethodInvoker(delegate ()
+                                                {
+                                                    m_MainForm.ReenterLoginDetails();
+                                                }));
+                                                break;
+
                                             default:
                                                 // If not one of the above confirm/deny strings then the message is the password salt sent back from the server in order to compare password hashs.
                                                 Byte[] salt = Convert.FromBase64String(recievedLoginMsg.msg);
@@ -247,7 +254,8 @@ namespace Winform_Client
             else
             {
                 // Comment out the following line to give a steady stream of previous messages to scroll back through
-                textBox_Output.Text = "----------";
+                //textBox_Output.Text = "----------";
+                //textBox_Output.Text = "----------";
 
                 // Append will scroll the textbox to the end of the new string, then add a new line
                 textBox_Output.AppendText("\r\n" + s + "\r\n");
@@ -359,6 +367,23 @@ namespace Winform_Client
             actionMessage.msg = message;
             MemoryStream outStream = actionMessage.WriteData();
             m_Server.Send(outStream.GetBuffer());
+        }
+
+        private void ReenterLoginDetails()
+        {
+
+        }
+
+        private void LogOut_Button_Click(object sender, EventArgs e)
+        {
+            LogoutMsg logoutMessage = new LogoutMsg();
+            MemoryStream outStream = logoutMessage.WriteData();
+            m_Server.Send(outStream.GetBuffer());
+
+            AddActionText("Logged Out.");
+
+            Application.Restart();
+            Environment.Exit(0);
         }
     }
 }

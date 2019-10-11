@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 #if TARGET_LINUX
 using Mono.Data.Sqlite;
@@ -30,6 +28,29 @@ namespace Server
             m_DataBaseName = dataBaseName;
             m_TableList = new List<SQLTable>();
             CreateNew();
+        }
+
+        public SQLDatabase(String dataBaseName, bool exists)
+        {
+            m_DataBaseName = dataBaseName;
+
+            if (exists)
+            {
+                try
+                {
+                    m_Connection = new sqliteConnection("Data Source=" + m_DataBaseName + ";Version=3;FailIfMissing=True");
+                    m_Connection.Open();
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("Open DB failed: " + ex);
+                }
+            }
+            else
+            {
+                m_TableList = new List<SQLTable>();
+                CreateNew();
+            }
         }
         
         public void CreateNew()
@@ -61,23 +82,38 @@ namespace Server
         
         public LoginTable addLoginTable(String tableName, string tableColumns)
         {
-            LoginTable newTable = new LoginTable(m_Connection, tableName, tableColumns);
+            LoginTable newTable = new LoginTable(m_Connection, tableName, tableColumns, true);
             m_TableList.Add(newTable);
             return newTable;
         }
         
         public UsersTable addUsersTable(String tableName, string tableColumns)
         {
-            UsersTable newTable = new UsersTable(m_Connection, tableName, tableColumns);
+            UsersTable newTable = new UsersTable(m_Connection, tableName, tableColumns, true);
             m_TableList.Add(newTable);
             return newTable;
         }
         
         public IdTable addIDTable(String tableName, string tableColumns)
         {
-            IdTable newTable = new IdTable(m_Connection, tableName, tableColumns);
+            IdTable newTable = new IdTable(m_Connection, tableName, tableColumns, true);
             m_TableList.Add(newTable);
             return newTable;
+        }
+
+        public LoginTable getLoginTable(String tableName)
+        {
+            return new LoginTable(m_Connection, tableName, "", false);
+        }
+
+        public UsersTable getUsersTable(String tableName)
+        {
+            return new UsersTable(m_Connection, tableName, "", false);
+        }
+
+        public IdTable getIdTable(String tableName)
+        {
+            return new IdTable(m_Connection, tableName, "", false);
         }
     }
 }

@@ -9,7 +9,7 @@ namespace MessageTypes
         userInitMessage,
         createNewUserMsg
     }
-    
+
     public abstract class Msg
     {
         public Msg() { mID = 0; }
@@ -42,7 +42,7 @@ namespace MessageTypes
                 case CreateNewUserMsg.ID:
                     m = new CreateNewUserMsg();
                     break;
-                    
+
                 default:
                     throw (new Exception());
             }
@@ -59,7 +59,7 @@ namespace MessageTypes
 
     public class ClientNameMsg : Msg
     {
-        public const int ID = 4;
+        public const int ID = 1;
 
         public String name;
 
@@ -85,7 +85,7 @@ namespace MessageTypes
 
     public class ActionMsg : Msg
     {
-        public const int ID = 5;
+        public const int ID = 2;
         public String msg;
         public String destination;
 
@@ -99,7 +99,7 @@ namespace MessageTypes
             BinaryWriter write = new BinaryWriter(stream);
             write.Write(ID);
             write.Write(msg);
-            write.Write(destination);
+            //write.Write(destination);
 
             write.Close();
 
@@ -115,7 +115,7 @@ namespace MessageTypes
 
     public class UserInitMsg : Msg
     {
-        public const int ID = 6;
+        public const int ID = 3;
         public String msg;
 
         public UserInitMsg()
@@ -134,7 +134,6 @@ namespace MessageTypes
             return stream;
         }
 
-
         public override void ReadData(BinaryReader read)
         {
             msg = read.ReadString();
@@ -143,7 +142,7 @@ namespace MessageTypes
 
     public class CreateNewUserMsg : Msg
     {
-        public const int ID = 8;
+        public const int ID = 4;
         public String msg;
 
         public CreateNewUserMsg() { mID = ID; }
@@ -166,10 +165,33 @@ namespace MessageTypes
 
     public class LoginMsg : Msg
     {
-        public const int ID = 9;
+        public const int ID = 5;
         public String msg;
 
         public LoginMsg() { mID = ID; }
+        public override MemoryStream WriteData()
+        {
+            MemoryStream stream = new MemoryStream();
+            BinaryWriter write = new BinaryWriter(stream);
+            write.Write(ID);
+            write.Write(msg);
+
+            write.Close();
+
+            return stream;
+        }
+        public override void ReadData(BinaryReader read)
+        {
+            msg = read.ReadString();
+        }
+    }
+
+    public class LogoutMsg : Msg
+    {
+        public const int ID = 6;
+        public String msg;
+
+        public LogoutMsg() { mID = ID; }
         public override MemoryStream WriteData()
         {
             MemoryStream stream = new MemoryStream();
