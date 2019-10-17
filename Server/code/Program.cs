@@ -11,7 +11,10 @@ namespace Server
     class Program
     {
         static String serverIPAddress = "127.0.0.1";
-        
+
+        static int passwordRenewalNumberOfMonths = 6;
+
+
         static LoginTable m_LoginsTable;
         static UsersTable m_UserTable;
         static IdTable m_IDTable;
@@ -60,7 +63,20 @@ namespace Server
             }
             catch (System.Exception) { }
         }
-        
+
+        static void SendUpdatePasswordMessage(Socket _s, String _msg)
+        {
+            UpdatePasswordMsg updatePasswordMsg = new UpdatePasswordMsg();
+            updatePasswordMsg.msg = _msg;
+            MemoryStream outStream = updatePasswordMsg.WriteData();
+
+            try
+            {
+                _s.Send(outStream.GetBuffer());
+            }
+            catch (System.Exception) { }
+        }
+
         static Socket GetSocketFromName(String _name)
         {
             lock (m_UserSocketDictionary)
@@ -113,7 +129,7 @@ namespace Server
 
                         if (message != null)
                         {
-                            Console.Write("Client action: " + clientSocket + "\r\n");
+                            Console.Write("Client action: " + clientSocket + ": " + message.ToString() + "\r\n");
                             switch (message.mID)
                             {
                                 case ActionMsg.ID:
@@ -134,9 +150,10 @@ namespace Server
 
                                             try
                                             {
-                                                if (sendMsg.Substring(0, 12) == "<HelloWorld>")
+                                                if (sendMsg.Substring(0, 23) == "<AuthenticateRequested>")
                                                 {
-                                                    SendActionMessage(clientSocket, "", sendMsg + " Big Rich");
+                                                    SendLoginMessage(clientSocket, "AuthenticateRequested");
+                                                    break;
                                                 }
                                             }
                                             catch { }
@@ -192,6 +209,7 @@ namespace Server
                                                     userName,                       // name
                                                     processedLoginInfo[1],          // password
                                                     processedLoginInfo[2],          // salt
+                                                    DateTime.Today.AddMonths(passwordRenewalNumberOfMonths).ToShortDateString(),          // password renewal date
                                                     "false",                        // is logged in
                                                     uniqueID                        // Id (not currently used as each name is unique)
                                                 });
@@ -228,7 +246,7 @@ namespace Server
                                         if (true)//m_LoginsTable.getStringFieldFromName(submittedUserName, "isLoggedIn") == "false")
                                         {
                                             String salt = m_LoginsTable.getStringFieldFromName(submittedUserName, "passwordSalt");
-                                            SendLoginMessage(clientSocket, salt);
+                                            SendLoginMessage(clientSocket, "Salt " + salt);
                                         }
                                         else
                                         {
@@ -237,6 +255,14 @@ namespace Server
                                     }
                                     else
                                     {
+                                        DateTime.TryParse(m_LoginsTable.getStringFieldFromName(submittedUserName, "passwordRenewalDate"), out DateTime dtRenewDate);
+
+                                        if (DateTime.Today.CompareTo(dtRenewDate) >= 0)
+                                        {
+                                            SendUpdatePasswordMessage(clientSocket, "UpdatePasswordRequired");
+                                            break;
+                                        }
+
                                         // Get the database copy of the hashed salted password
                                         String databaseHash = m_LoginsTable.getStringFieldFromName(submittedUserName, "passwordHash");
                                         
@@ -256,6 +282,29 @@ namespace Server
                                         {
                                             SendLoginMessage(clientSocket, "LoginFailed");
                                         }
+                                    }
+                                    break;
+
+                                case UpdatePasswordMsg.ID:
+                                    {
+                                        UpdatePasswordMsg UpdatePasswordMsg = (UpdatePasswordMsg)message;
+                                        String updatePasswordInfo = UpdatePasswordMsg.msg;
+
+                                        String[] processedPasswordInfo = updatePasswordInfo.Split(' ');
+
+                                        // Add the new user details to the logins table
+                                        m_LoginsTable.UpdatePassword(new string[]
+                                        {
+                                                    // Starting values
+                                                    processedPasswordInfo[0],          // name
+                                                    processedPasswordInfo[1],          // password
+                                                    processedPasswordInfo[2],          // salt
+                                                    DateTime.Today.AddMonths(passwordRenewalNumberOfMonths).ToShortDateString(),          // password renewal date
+                                        });
+
+                                        // Tells the client to close it's window
+                                        SendUpdatePasswordMessage(clientSocket, "SuccessUpdatedPassword");
+
                                     }
                                     break;
 
@@ -323,6 +372,7 @@ namespace Server
                     "name varchar(20) NOT NULL, " +
                     "passwordHash varchar(512) NOT NULL, " +
                     "passwordSalt varchar(512) NOT NULL, " +
+                    "passwordRenewalDate varchar(128) NOT NULL, " +
                     "isLoggedIn varchar(8), " +
                     "id int NOT NULL");
 
@@ -335,7 +385,7 @@ namespace Server
                     "name varchar(24) NOT NULL, " +
                     "nextID int");
 
-                m_LoginsTable.AddEntry(new string[] { "admin", "J1NF8m6ZRuDcx/5038/xP/zVdHPwg2YEdpOZvEVRFCw=", "IxBicNFzHtBa5GBFOuZTatjPTmVvgQ0JQ5NHwp+BOTI=", "false", "0" });
+                m_LoginsTable.AddEntry(new string[] { "admin", "J1NF8m6ZRuDcx/5038/xP/zVdHPwg2YEdpOZvEVRFCw=", "IxBicNFzHtBa5GBFOuZTatjPTmVvgQ0JQ5NHwp+BOTI=", DateTime.MaxValue.Date.ToShortDateString(), "false", "0" });
                 m_UserTable.AddEntry(new string[] { "admin", "0", "999" });
 
                 m_IDTable.AddIDEntry("next", 1);

@@ -9,3 +9,4 @@ C:\ClientServerWinformsApplication\ClientServerAuthSystem\Winform Client\Winform
 C:\ClientServerWinformsApplication\ClientServerAuthSystem\Winform Client\Winform Client\obj\x86\Debug\WinformClient.csproj.CoreCompileInputs.cache
 C:\ClientServerWinformsApplication\ClientServerAuthSystem\Winform Client\Winform Client\obj\x86\Debug\Winform Client.exe
 C:\ClientServerWinformsApplication\ClientServerAuthSystem\Winform Client\Winform Client\obj\x86\Debug\Winform Client.pdb
+C:\ClientServerWinformsApplication\ClientServerAuthSystem\Winform Client\Winform Client\obj\x86\Debug\Winform_Client.RenewPassword.resources

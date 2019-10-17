@@ -88,5 +88,10 @@ namespace Winform_Client
                 LoginButton.Enabled = true;
             }
         }
+
+        public void HideCreateNewUserButton()
+        {
+            RegisterButton.Visible = false;
+        }
     }
 }

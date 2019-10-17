@@ -17,12 +17,14 @@ namespace Winform_Client
         private Thread m_Thread;
         bool m_Quit = false;
         bool m_Connected = false;
-        List<String> m_CurrentClientList = new List<String>();
-        
+        string m_CurrentUserName;
+
+
         static Form1 m_MainForm;
         static LoginForm m_LoginForm;
         static RegisterNewUser m_RegisterNewUserForm;
-        
+        static RenewPassword m_UpdatePasswordForm;
+
         public Form1()
         {
             m_MainForm = this;
@@ -87,7 +89,7 @@ namespace Winform_Client
                         m_MainForm.Hide();
                     }));
 
-                    form.AddMessageText("No server!");
+                    form.AddMessageText("No connection.");
                     Thread.Sleep(1000);
                 }
             }
@@ -116,7 +118,7 @@ namespace Winform_Client
 
                         if (m != null)
                         {
-                            switch (m.mID)
+                                switch (m.mID)
                             {
                                 case ClientNameMsg.ID:
                                     {
@@ -135,7 +137,7 @@ namespace Winform_Client
                                 case LoginMsg.ID:
                                     {
                                         LoginMsg recievedLoginMsg = (LoginMsg)m;
-                                        switch (recievedLoginMsg.msg)
+                                        switch (recievedLoginMsg.msg.Split(' ')[0])
                                         {
                                             case "LoginAccepted":
                                                 m_MainForm.Invoke(new MethodInvoker(delegate ()
@@ -144,7 +146,6 @@ namespace Winform_Client
                                                     m_MainForm.Enabled = true;
                                                     m_MainForm.Show();
                                                     m_MainForm.WindowState = FormWindowState.Normal;
-                                                    
                                                 }));
 
                                                 break;
@@ -172,9 +173,9 @@ namespace Winform_Client
                                                 }));
                                                 break;
 
-                                            default:
+                                            case "Salt":
                                                 // If not one of the above confirm/deny strings then the message is the password salt sent back from the server in order to compare password hashs.
-                                                Byte[] salt = Convert.FromBase64String(recievedLoginMsg.msg);
+                                                Byte[] salt = Convert.FromBase64String(recievedLoginMsg.msg.Split(' ')[1]);
 
                                                 m_MainForm.Invoke(new MethodInvoker(delegate ()
                                                 {
@@ -215,6 +216,28 @@ namespace Winform_Client
                                         }
                                     }
                                     break;
+
+                                case UpdatePasswordMsg.ID:
+                                    {
+                                        UpdatePasswordMsg updatePasswordMsg = (UpdatePasswordMsg)m;
+                                        switch (updatePasswordMsg.msg)
+                                        {
+                                            case "UpdatePasswordRequired":
+                                                m_MainForm.Invoke(new MethodInvoker(delegate ()
+                                                {
+                                                    m_MainForm.OpenUpdatePasswordForm();
+                                                }));
+                                                break;
+
+                                            case "SuccessUpdatedPassword":
+                                                m_MainForm.Invoke(new MethodInvoker(delegate ()
+                                                {
+                                                    m_UpdatePasswordForm.Close();
+                                                }));
+                                                break;
+                                        }
+                                    }
+                                    break;
                             }
                         }
                     }
@@ -222,7 +245,7 @@ namespace Winform_Client
                 catch (Exception)
                 {
                     form.m_Connected = false;
-                    Console.WriteLine("Lost server!");
+                    Console.WriteLine("Lost connection.");
                     try
                     {
                         m_MainForm.Enabled = false;
@@ -255,7 +278,7 @@ namespace Winform_Client
             {
                 // Comment out the following line to give a steady stream of previous messages to scroll back through
                 //textBox_Output.Text = "----------";
-                //textBox_Output.Text = "----------";
+                //textBox_Output.Text = "";
 
                 // Append will scroll the textbox to the end of the new string, then add a new line
                 textBox_Output.AppendText("\r\n" + s + "\r\n");
@@ -294,7 +317,15 @@ namespace Winform_Client
             MemoryStream outStream = newUserMsg.WriteData();
             m_Server.Send(outStream.GetBuffer());
         }
-        
+
+        public void sendNewPasswordInfo(String newPasswordInfoString)
+        {
+            UpdatePasswordMsg updatePasswordMsg = new UpdatePasswordMsg();
+            updatePasswordMsg.msg = newPasswordInfoString;
+            MemoryStream outStream = updatePasswordMsg.WriteData();
+            m_Server.Send(outStream.GetBuffer());
+        }
+
         public void checkNameAvailability(String userName)
         {
             sendNewUserInfo(userName);
@@ -309,6 +340,7 @@ namespace Winform_Client
             
             m_MainForm.Invoke(new MethodInvoker(delegate ()
             {
+                m_MainForm.m_CurrentUserName = loginDetails.Split(' ')[0];
                 m_MainForm.SetClientName(loginDetails.Split(' ')[0]);
             }));
         }
@@ -351,6 +383,12 @@ namespace Winform_Client
             m_LoginForm.ShowDialog();
         }
 
+        private void OpenUpdatePasswordForm()
+        {
+            m_UpdatePasswordForm = new RenewPassword(this, m_CurrentUserName);
+            m_UpdatePasswordForm.ShowDialog();
+        }
+
         private void OnExit()
         {
             m_Quit = true;
@@ -371,7 +409,15 @@ namespace Winform_Client
 
         private void ReenterLoginDetails()
         {
-
+            m_MainForm.Invoke(new MethodInvoker(delegate ()
+            {
+                m_LoginForm.ClearTextBoxes("");
+                m_LoginForm.HideCreateNewUserButton();
+                m_LoginForm.ShowDialog();
+                m_MainForm.Hide();
+                m_MainForm.Enabled = false;
+            }));
+            
         }
 
         private void LogOut_Button_Click(object sender, EventArgs e)
@@ -384,6 +430,11 @@ namespace Winform_Client
 
             Application.Restart();
             Environment.Exit(0);
+        }
+
+        private void ChangePasswordButton_Click(object sender, EventArgs e)
+        {
+            OpenUpdatePasswordForm();
         }
     }
 }

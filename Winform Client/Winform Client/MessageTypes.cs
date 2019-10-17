@@ -43,6 +43,14 @@ namespace MessageTypes
                     m = new CreateNewUserMsg();
                     break;
 
+                case UpdatePasswordMsg.ID:
+                    m = new UpdatePasswordMsg();
+                    break;
+
+                case LogoutMsg.ID:
+                    m = new LogoutMsg();
+                    break;
+
                 default:
                     throw (new Exception());
             }
@@ -163,9 +171,32 @@ namespace MessageTypes
         }
     }
 
-    public class LoginMsg : Msg
+    public class UpdatePasswordMsg : Msg
     {
         public const int ID = 5;
+        public String msg;
+
+        public UpdatePasswordMsg() { mID = ID; }
+        public override MemoryStream WriteData()
+        {
+            MemoryStream stream = new MemoryStream();
+            BinaryWriter write = new BinaryWriter(stream);
+            write.Write(ID);
+            write.Write(msg);
+
+            write.Close();
+
+            return stream;
+        }
+        public override void ReadData(BinaryReader read)
+        {
+            msg = read.ReadString();
+        }
+    }
+
+    public class LoginMsg : Msg
+    {
+        public const int ID = 6;
         public String msg;
 
         public LoginMsg() { mID = ID; }
@@ -188,7 +219,7 @@ namespace MessageTypes
 
     public class LogoutMsg : Msg
     {
-        public const int ID = 6;
+        public const int ID = 7;
         public String msg;
 
         public LogoutMsg() { mID = ID; }

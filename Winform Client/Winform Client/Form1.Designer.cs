@@ -32,6 +32,7 @@
             this.textBox_Input = new System.Windows.Forms.TextBox();
             this.textBox_Output = new System.Windows.Forms.TextBox();
             this.LogOut_Button = new System.Windows.Forms.Button();
+            this.ChangePasswordButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // buttonSend
@@ -70,12 +71,23 @@
             this.LogOut_Button.UseVisualStyleBackColor = true;
             this.LogOut_Button.Click += new System.EventHandler(this.LogOut_Button_Click);
             // 
+            // ChangePasswordButton
+            // 
+            this.ChangePasswordButton.Location = new System.Drawing.Point(309, 13);
+            this.ChangePasswordButton.Name = "ChangePasswordButton";
+            this.ChangePasswordButton.Size = new System.Drawing.Size(107, 23);
+            this.ChangePasswordButton.TabIndex = 5;
+            this.ChangePasswordButton.Text = "Change password";
+            this.ChangePasswordButton.UseVisualStyleBackColor = true;
+            this.ChangePasswordButton.Click += new System.EventHandler(this.ChangePasswordButton_Click);
+            // 
             // Form1
             // 
             this.AcceptButton = this.buttonSend;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(543, 363);
+            this.Controls.Add(this.ChangePasswordButton);
             this.Controls.Add(this.LogOut_Button);
             this.Controls.Add(this.textBox_Output);
             this.Controls.Add(this.textBox_Input);
@@ -97,6 +109,7 @@
         private System.Windows.Forms.TextBox textBox_Input;
         private System.Windows.Forms.TextBox textBox_Output;
         private System.Windows.Forms.Button LogOut_Button;
+        private System.Windows.Forms.Button ChangePasswordButton;
     }
 }
 

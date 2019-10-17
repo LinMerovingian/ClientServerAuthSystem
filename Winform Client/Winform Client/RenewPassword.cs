@@ -1,31 +1,53 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
 using System.Linq;
+using System.Text;
 using System.Windows.Forms;
 
 namespace Winform_Client
 {
-    public partial class RegisterNewUser : Form
+    public partial class RenewPassword : Form
     {
-        Form1 m_MainForm;
+        Form1 mMainForm;
 
-        bool validUserNameChosen = false;
+        string mUserName;
+
         bool validPasswordChosen = false;
         bool validPasswordEnteredTwice = false;
-        
-        public RegisterNewUser(Form1 mainForm)
+
+        public RenewPassword(Form1 mainForm, string userName)
         {
-            m_MainForm = mainForm;
+            mMainForm = mainForm;
+            mUserName = userName;
 
             InitializeComponent();
         }
 
+        private void PreviousPassword_TextChanged(object sender, EventArgs e)
+        {
+            CheckPasswordsMatch();
+        }
+
         private void PasswordBox1_TextChanged(object sender, EventArgs e)
+        {
+            CheckPasswordsMatch();
+        }
+
+        private void PasswordBox2_TextChanged(object sender, EventArgs e)
+        {
+            CheckPasswordsMatch();
+        }
+
+        private void CheckPasswordsMatch()
         {
             validPasswordChosen = false;
 
             if (PasswordBox1.Text.Length > 0)
             {
-                if (PasswordBox1.Text.Length >= 8)
+                if (PasswordBox1.Text.Length >= 8 && PasswordBox1.Text != PreviousPassword.Text)
                 {
                     bool containsUpper = false;
                     bool containsLower = false;
@@ -61,26 +83,16 @@ namespace Winform_Client
                 Password1RedCross.Visible = false;
             }
 
-            CheckPasswordsMatch();
-        }
-
-        private void PasswordBox2_TextChanged(object sender, EventArgs e)
-        {
-            CheckPasswordsMatch();
-        }
-        
-        private void CheckPasswordsMatch()
-        {
-            if (PasswordBox1.Text.Length > 0 && PasswordBox2.Text.Length > 0)
+            if (PreviousPassword.Text.Length > 0 && PasswordBox1.Text.Length > 0 && PasswordBox2.Text.Length > 0)
             {
                 if (validPasswordChosen && PasswordBox1.Text == PasswordBox2.Text)
                 {
                     Password2GreenTick.Visible = true;
                     Password2RedCross.Visible = false;
                     validPasswordEnteredTwice = true;
-                    if (validUserNameChosen)
+                    if (PreviousPassword.Text != PasswordBox1.Text)
                     {
-                        RegisterButton.Enabled = true;
+                        RenewButton.Enabled = true;
                     }
                 }
                 else
@@ -88,7 +100,7 @@ namespace Winform_Client
                     Password2GreenTick.Visible = false;
                     Password2RedCross.Visible = true;
                     validPasswordEnteredTwice = false;
-                    RegisterButton.Enabled = false;
+                    RenewButton.Enabled = false;
                 }
             }
             else
@@ -96,54 +108,7 @@ namespace Winform_Client
                 Password2GreenTick.Visible = false;
                 Password2RedCross.Visible = false;
                 validPasswordEnteredTwice = false;
-                RegisterButton.Enabled = false;
-            }
-        }
-        
-        private void CheckNameAvailabilityButton_Click(object sender, EventArgs e)
-        {
-            if (UserNameChoice.Text.Length > 0)
-            {
-                String forbiddenChars = "? &^$#@!()+-,:;<>’\'-_*";
-                foreach (char c in forbiddenChars)
-                {
-                    if (UserNameChoice.Text.Contains(c))
-                    {
-                        UserNameRejected();
-                        return;
-                    }
-                }
-                m_MainForm.checkNameAvailability(UserNameChoice.Text);
-            }
-        }
-        
-        public void UserNameAccepted()
-        {
-            UserNameGreenTick.Visible = true;
-            UserNameRedCross.Visible = false;
-            validUserNameChosen = true;
-            if (validPasswordEnteredTwice)
-            {
-                RegisterButton.Enabled = true;
-            }
-        }
-        
-        public void UserNameRejected()
-        {
-            UserNameGreenTick.Visible = false;
-            UserNameRedCross.Visible = true;
-            validUserNameChosen = false;
-            RegisterButton.Enabled = false;
-        }
-        
-        private void UserNameChoice_TextChanged(object sender, EventArgs e)
-        {
-            if (validUserNameChosen)
-            {
-                validUserNameChosen = false;
-                UserNameGreenTick.Visible = false;
-                UserNameRedCross.Visible = false;
-                RegisterButton.Enabled = false;
+                RenewButton.Enabled = false;
             }
         }
 
@@ -151,24 +116,33 @@ namespace Winform_Client
         {
             this.Close();
         }
-        
-        private void RegisterButton_Click(object sender, EventArgs e)
+
+        private void RenewButton_Click(object sender, EventArgs e)
         {
-            if (validUserNameChosen && validPasswordEnteredTwice)
+            if (validPasswordEnteredTwice)
             {
-                m_MainForm.sendNewUserInfo(UserNameChoice.Text + " " +
+                mMainForm.sendNewPasswordInfo(mUserName + " " +
                                 Encryption.encryptPasswordWithSalt(PasswordBox1.Text, out String salt) + " " +
                                 salt);
             }
         }
 
         private delegate void AddTextDelegate(String s);
-        
+
         public void ClearTextBoxes()
         {
-            UserNameChoice.Clear();
+            PreviousPassword.Clear();
             PasswordBox1.Clear();
             PasswordBox2.Clear();
+            IncorrectPasswordLabel.Visible = false;
+        }
+
+        public void IncorrectPreviousPasswordEntered()
+        {
+            PreviousPassword.Clear();
+            PasswordBox1.Clear();
+            PasswordBox2.Clear();
+            IncorrectPasswordLabel.Visible = true;
         }
     }
 }

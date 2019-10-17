@@ -93,6 +93,10 @@ namespace Server
                     }
                     break;
 
+                case "gate":
+                    outputMessage = "<AuthenticateRequested>";
+                    break;
+
                 default:
                     //handle error
                     outputMessage = "\r\nERROR";

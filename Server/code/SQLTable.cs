@@ -259,19 +259,39 @@ namespace Server
         {
             try
             {
-                sqliteCommand command = new sqliteCommand("insert into " + m_TableName + " values (@name, @password, @salt, @isLoggedIn, @id)", m_Connection);
+                sqliteCommand command = new sqliteCommand("insert into " + m_TableName + " values (@name, @password, @salt, @passwordRenewalDate, @isLoggedIn, @id)", m_Connection);
 
                 command.Parameters.Add("@name", System.Data.DbType.String).Value = dataArray[0];
                 command.Parameters.Add("@password", System.Data.DbType.String).Value = dataArray[1];
                 command.Parameters.Add("@salt", System.Data.DbType.String).Value = dataArray[2];
-                command.Parameters.Add("@isLoggedIn", System.Data.DbType.String).Value = dataArray[3];
-                command.Parameters.Add("@id", System.Data.DbType.UInt32).Value = dataArray[4];
+                command.Parameters.Add("@passwordRenewalDate", System.Data.DbType.String).Value = dataArray[3];
+                command.Parameters.Add("@isLoggedIn", System.Data.DbType.String).Value = dataArray[4];
+                command.Parameters.Add("@id", System.Data.DbType.UInt32).Value = dataArray[5];
 
                 command.ExecuteNonQuery();
             }
             catch (Exception ex)
             {
                 Console.WriteLine("Failed to add: " + dataArray[0] + " to DB " + ex);
+            }
+        }
+
+        public void UpdatePassword(string[] dataArray)
+        {
+            try
+            {
+                sqliteCommand command = new sqliteCommand("update " + m_TableName + " set passwordHash = @password, passwordSalt = @salt, passwordRenewalDate = @passwordRenewalDate where name = @name", m_Connection);
+
+                command.Parameters.Add("@name", System.Data.DbType.String).Value = dataArray[0];
+                command.Parameters.Add("@password", System.Data.DbType.String).Value = dataArray[1];
+                command.Parameters.Add("@salt", System.Data.DbType.String).Value = dataArray[2];
+                command.Parameters.Add("@passwordRenewalDate", System.Data.DbType.String).Value = dataArray[3];
+
+                command.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Failed to change password for: " + dataArray[0] + " : " + ex);
             }
         }
     }

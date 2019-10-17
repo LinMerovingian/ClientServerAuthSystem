@@ -37,21 +37,25 @@
             this.label3 = new System.Windows.Forms.Label();
             this.RegisterButton = new System.Windows.Forms.Button();
             this.CheckNameAvailabilityButton = new System.Windows.Forms.Button();
+            this.Cancel = new System.Windows.Forms.Button();
+            this.Password1RedCross = new System.Windows.Forms.PictureBox();
+            this.Password1GreenTick = new System.Windows.Forms.PictureBox();
+            this.Password2RedCross = new System.Windows.Forms.PictureBox();
+            this.Password2GreenTick = new System.Windows.Forms.PictureBox();
             this.UserNameRedCross = new System.Windows.Forms.PictureBox();
             this.UserNameGreenTick = new System.Windows.Forms.PictureBox();
-            this.Cancel = new System.Windows.Forms.Button();
-            this.PasswordRedCross = new System.Windows.Forms.PictureBox();
-            this.PasswordGreenTick = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.Password1RedCross)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Password1GreenTick)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Password2RedCross)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Password2GreenTick)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.UserNameRedCross)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.UserNameGreenTick)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PasswordRedCross)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PasswordGreenTick)).BeginInit();
             this.SuspendLayout();
             // 
             // PasswordBox1
             // 
             this.PasswordBox1.Location = new System.Drawing.Point(176, 103);
-            this.PasswordBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.PasswordBox1.Margin = new System.Windows.Forms.Padding(2);
             this.PasswordBox1.Name = "PasswordBox1";
             this.PasswordBox1.PasswordChar = '*';
             this.PasswordBox1.Size = new System.Drawing.Size(130, 20);
@@ -61,7 +65,7 @@
             // UserNameChoice
             // 
             this.UserNameChoice.Location = new System.Drawing.Point(176, 34);
-            this.UserNameChoice.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.UserNameChoice.Margin = new System.Windows.Forms.Padding(2);
             this.UserNameChoice.Name = "UserNameChoice";
             this.UserNameChoice.Size = new System.Drawing.Size(130, 20);
             this.UserNameChoice.TabIndex = 1;
@@ -70,7 +74,7 @@
             // PasswordBox2
             // 
             this.PasswordBox2.Location = new System.Drawing.Point(176, 138);
-            this.PasswordBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.PasswordBox2.Margin = new System.Windows.Forms.Padding(2);
             this.PasswordBox2.Name = "PasswordBox2";
             this.PasswordBox2.PasswordChar = '*';
             this.PasswordBox2.Size = new System.Drawing.Size(130, 20);
@@ -112,9 +116,9 @@
             // 
             this.RegisterButton.Enabled = false;
             this.RegisterButton.Location = new System.Drawing.Point(242, 173);
-            this.RegisterButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.RegisterButton.Margin = new System.Windows.Forms.Padding(2);
             this.RegisterButton.Name = "RegisterButton";
-            this.RegisterButton.Size = new System.Drawing.Size(63, 20);
+            this.RegisterButton.Size = new System.Drawing.Size(63, 28);
             this.RegisterButton.TabIndex = 5;
             this.RegisterButton.Text = "Register";
             this.RegisterButton.UseVisualStyleBackColor = true;
@@ -123,7 +127,7 @@
             // CheckNameAvailabilityButton
             // 
             this.CheckNameAvailabilityButton.Location = new System.Drawing.Point(203, 67);
-            this.CheckNameAvailabilityButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.CheckNameAvailabilityButton.Margin = new System.Windows.Forms.Padding(2);
             this.CheckNameAvailabilityButton.Name = "CheckNameAvailabilityButton";
             this.CheckNameAvailabilityButton.Size = new System.Drawing.Size(101, 22);
             this.CheckNameAvailabilityButton.TabIndex = 2;
@@ -131,12 +135,75 @@
             this.CheckNameAvailabilityButton.UseVisualStyleBackColor = true;
             this.CheckNameAvailabilityButton.Click += new System.EventHandler(this.CheckNameAvailabilityButton_Click);
             // 
+            // Cancel
+            // 
+            this.Cancel.Location = new System.Drawing.Point(45, 173);
+            this.Cancel.Margin = new System.Windows.Forms.Padding(2);
+            this.Cancel.Name = "Cancel";
+            this.Cancel.Size = new System.Drawing.Size(61, 28);
+            this.Cancel.TabIndex = 6;
+            this.Cancel.Text = "Cancel";
+            this.Cancel.UseVisualStyleBackColor = true;
+            this.Cancel.Click += new System.EventHandler(this.Cancel_Click);
+            // 
+            // Password1RedCross
+            // 
+            this.Password1RedCross.Image = global::Winform_Client.Properties.Resources.RedCross;
+            this.Password1RedCross.InitialImage = ((System.Drawing.Image)(resources.GetObject("Password1RedCross.InitialImage")));
+            this.Password1RedCross.Location = new System.Drawing.Point(309, 103);
+            this.Password1RedCross.Margin = new System.Windows.Forms.Padding(2);
+            this.Password1RedCross.Name = "Password1RedCross";
+            this.Password1RedCross.Size = new System.Drawing.Size(18, 17);
+            this.Password1RedCross.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.Password1RedCross.TabIndex = 16;
+            this.Password1RedCross.TabStop = false;
+            this.Password1RedCross.Visible = false;
+            // 
+            // Password1GreenTick
+            // 
+            this.Password1GreenTick.Image = global::Winform_Client.Properties.Resources.GreenTick;
+            this.Password1GreenTick.InitialImage = ((System.Drawing.Image)(resources.GetObject("Password1GreenTick.InitialImage")));
+            this.Password1GreenTick.Location = new System.Drawing.Point(309, 97);
+            this.Password1GreenTick.Margin = new System.Windows.Forms.Padding(2);
+            this.Password1GreenTick.Name = "Password1GreenTick";
+            this.Password1GreenTick.Size = new System.Drawing.Size(29, 29);
+            this.Password1GreenTick.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.Password1GreenTick.TabIndex = 15;
+            this.Password1GreenTick.TabStop = false;
+            this.Password1GreenTick.Visible = false;
+            // 
+            // Password2RedCross
+            // 
+            this.Password2RedCross.Image = global::Winform_Client.Properties.Resources.RedCross;
+            this.Password2RedCross.InitialImage = ((System.Drawing.Image)(resources.GetObject("Password2RedCross.InitialImage")));
+            this.Password2RedCross.Location = new System.Drawing.Point(309, 138);
+            this.Password2RedCross.Margin = new System.Windows.Forms.Padding(2);
+            this.Password2RedCross.Name = "Password2RedCross";
+            this.Password2RedCross.Size = new System.Drawing.Size(18, 17);
+            this.Password2RedCross.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.Password2RedCross.TabIndex = 14;
+            this.Password2RedCross.TabStop = false;
+            this.Password2RedCross.Visible = false;
+            // 
+            // Password2GreenTick
+            // 
+            this.Password2GreenTick.Image = global::Winform_Client.Properties.Resources.GreenTick;
+            this.Password2GreenTick.InitialImage = ((System.Drawing.Image)(resources.GetObject("Password2GreenTick.InitialImage")));
+            this.Password2GreenTick.Location = new System.Drawing.Point(309, 132);
+            this.Password2GreenTick.Margin = new System.Windows.Forms.Padding(2);
+            this.Password2GreenTick.Name = "Password2GreenTick";
+            this.Password2GreenTick.Size = new System.Drawing.Size(29, 29);
+            this.Password2GreenTick.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.Password2GreenTick.TabIndex = 13;
+            this.Password2GreenTick.TabStop = false;
+            this.Password2GreenTick.Visible = false;
+            // 
             // UserNameRedCross
             // 
             this.UserNameRedCross.Image = global::Winform_Client.Properties.Resources.RedCross;
             this.UserNameRedCross.InitialImage = ((System.Drawing.Image)(resources.GetObject("UserNameRedCross.InitialImage")));
             this.UserNameRedCross.Location = new System.Drawing.Point(309, 34);
-            this.UserNameRedCross.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.UserNameRedCross.Margin = new System.Windows.Forms.Padding(2);
             this.UserNameRedCross.Name = "UserNameRedCross";
             this.UserNameRedCross.Size = new System.Drawing.Size(18, 17);
             this.UserNameRedCross.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -149,7 +216,7 @@
             this.UserNameGreenTick.Image = global::Winform_Client.Properties.Resources.GreenTick;
             this.UserNameGreenTick.InitialImage = ((System.Drawing.Image)(resources.GetObject("UserNameGreenTick.InitialImage")));
             this.UserNameGreenTick.Location = new System.Drawing.Point(309, 28);
-            this.UserNameGreenTick.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.UserNameGreenTick.Margin = new System.Windows.Forms.Padding(2);
             this.UserNameGreenTick.Name = "UserNameGreenTick";
             this.UserNameGreenTick.Size = new System.Drawing.Size(29, 29);
             this.UserNameGreenTick.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -157,51 +224,16 @@
             this.UserNameGreenTick.TabStop = false;
             this.UserNameGreenTick.Visible = false;
             // 
-            // Cancel
-            // 
-            this.Cancel.Location = new System.Drawing.Point(45, 173);
-            this.Cancel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.Cancel.Name = "Cancel";
-            this.Cancel.Size = new System.Drawing.Size(61, 20);
-            this.Cancel.TabIndex = 6;
-            this.Cancel.Text = "Cancel";
-            this.Cancel.UseVisualStyleBackColor = true;
-            this.Cancel.Click += new System.EventHandler(this.Cancel_Click);
-            // 
-            // PasswordRedCross
-            // 
-            this.PasswordRedCross.Image = global::Winform_Client.Properties.Resources.RedCross;
-            this.PasswordRedCross.InitialImage = ((System.Drawing.Image)(resources.GetObject("PasswordRedCross.InitialImage")));
-            this.PasswordRedCross.Location = new System.Drawing.Point(309, 138);
-            this.PasswordRedCross.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.PasswordRedCross.Name = "PasswordRedCross";
-            this.PasswordRedCross.Size = new System.Drawing.Size(18, 17);
-            this.PasswordRedCross.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.PasswordRedCross.TabIndex = 14;
-            this.PasswordRedCross.TabStop = false;
-            this.PasswordRedCross.Visible = false;
-            // 
-            // PasswordGreenTick
-            // 
-            this.PasswordGreenTick.Image = global::Winform_Client.Properties.Resources.GreenTick;
-            this.PasswordGreenTick.InitialImage = ((System.Drawing.Image)(resources.GetObject("PasswordGreenTick.InitialImage")));
-            this.PasswordGreenTick.Location = new System.Drawing.Point(309, 132);
-            this.PasswordGreenTick.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.PasswordGreenTick.Name = "PasswordGreenTick";
-            this.PasswordGreenTick.Size = new System.Drawing.Size(29, 29);
-            this.PasswordGreenTick.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.PasswordGreenTick.TabIndex = 13;
-            this.PasswordGreenTick.TabStop = false;
-            this.PasswordGreenTick.Visible = false;
-            // 
             // RegisterNewUser
             // 
             this.AcceptButton = this.RegisterButton;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(370, 241);
-            this.Controls.Add(this.PasswordRedCross);
-            this.Controls.Add(this.PasswordGreenTick);
+            this.Controls.Add(this.Password1RedCross);
+            this.Controls.Add(this.Password1GreenTick);
+            this.Controls.Add(this.Password2RedCross);
+            this.Controls.Add(this.Password2GreenTick);
             this.Controls.Add(this.Cancel);
             this.Controls.Add(this.UserNameRedCross);
             this.Controls.Add(this.UserNameGreenTick);
@@ -213,13 +245,15 @@
             this.Controls.Add(this.PasswordBox2);
             this.Controls.Add(this.UserNameChoice);
             this.Controls.Add(this.PasswordBox1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "RegisterNewUser";
             this.Text = "Register new user";
+            ((System.ComponentModel.ISupportInitialize)(this.Password1RedCross)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Password1GreenTick)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Password2RedCross)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Password2GreenTick)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.UserNameRedCross)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.UserNameGreenTick)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PasswordRedCross)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PasswordGreenTick)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -238,7 +272,9 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.PictureBox UserNameGreenTick;
         private System.Windows.Forms.PictureBox UserNameRedCross;
-        private System.Windows.Forms.PictureBox PasswordRedCross;
-        private System.Windows.Forms.PictureBox PasswordGreenTick;
+        private System.Windows.Forms.PictureBox Password2RedCross;
+        private System.Windows.Forms.PictureBox Password2GreenTick;
+        private System.Windows.Forms.PictureBox Password1GreenTick;
+        private System.Windows.Forms.PictureBox Password1RedCross;
     }
 }

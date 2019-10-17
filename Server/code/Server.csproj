@@ -61,7 +61,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Character.cs" />
     <Compile Include="Controls.cs" />
     <Compile Include="SQLDatabase.cs" />
     <Compile Include="Program.cs" />
